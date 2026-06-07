@@ -78,12 +78,12 @@ function openHelpLink() {
   }
 
   const message = encodeURIComponent('[help] Saya membutuhkan bantuan untuk undangan wisuda.');
-  window.open(`https://wa.me/${state.config.HELP_PHONE}?text=${message}`, '_blank');
+  window.open(`https://wa.me/${state.config.PHONE}?text=${message}`, '_blank');
 }
 
 function openSpecialGuestLink() {
   const message = encodeURIComponent('[Special Guest]');
-  window.open(`https://wa.me/${state.config.HELP_PHONE}?text=${message}`, '_blank');
+  window.open(`https://wa.me/${state.config.PHONE}?text=${message}`, '_blank');
 }
 
 function openRsvpLink() {

@@ -167,7 +167,7 @@ async function runAuthCheck(item) {
       const message = item.check === 'authenticationGuest'
         ? encodeURIComponent('[Special Guest] Authentication')
         : encodeURIComponent(`[Special Guest] ${state.guestName} not authorized`);
-      const helpUrl = `https://wa.me/${state.config.HELP_PHONE}?text=${message}`;
+      const helpUrl = `https://wa.me/${state.config.PHONE}?text=${message}`;
       createTerminalHelpLink('Help: ', '[Whatsapp]', helpUrl);
     }
   }
