@@ -64,6 +64,27 @@ export function renderBootCheckResult(item, result) {
   }
 }
 
+export function renderTextFake(item) {
+  const line = document.createElement('div');
+  line.className = 'terminal-line';
+  const openBracket = document.createElement('span');
+  openBracket.textContent = '[';
+  const statusSpan = document.createElement('span');
+  statusSpan.textContent = item.success ? ' OK ' : ' ERROR ';
+  statusSpan.className = item.success ? 'status-ok' : 'status-error';
+  const closeBracket = document.createElement('span');
+  closeBracket.textContent = ']';
+  const textSpan = document.createElement('span');
+  textSpan.textContent = ` ${item.text}`;
+
+  line.appendChild(openBracket);
+  line.appendChild(statusSpan);
+  line.appendChild(closeBracket);
+  line.appendChild(textSpan);
+  terminalContent.appendChild(line);
+  terminalScreen.scrollTop = terminalScreen.scrollHeight;
+}
+
 export async function runConfigCheck(item) {
   const line = document.createElement('div');
   line.className = 'terminal-line';
@@ -109,6 +130,49 @@ export async function runConfigCheck(item) {
   return result;
 }
 
+export async function runCheckFake(item) {
+  const line = document.createElement('div');
+  line.className = 'terminal-line';
+  const openBracket = document.createElement('span');
+  openBracket.textContent = '[';
+  const statusSpan = document.createElement('span');
+  statusSpan.textContent = ' \\ ';
+  const closeBracket = document.createElement('span');
+  closeBracket.textContent = ']';
+  const labelText = document.createElement('span');
+  labelText.textContent = ` ${item.label}`;
+  const detailText = document.createElement('span');
+  detailText.textContent = ' checking...';
+  detailText.className = 'boot-loading-detail';
+
+  line.appendChild(openBracket);
+  line.appendChild(statusSpan);
+  line.appendChild(closeBracket);
+  line.appendChild(labelText);
+  line.appendChild(detailText);
+  terminalContent.appendChild(line);
+  terminalScreen.scrollTop = terminalScreen.scrollHeight;
+
+  const keys = item.keys || [];
+  const spinner = [' \\ ', ' / '];
+
+  // Animate through keys without validation
+  for (const key of keys) {
+    detailText.textContent = ` checking ${key}`;
+    for (let i = 0; i < 5; i++) {
+      statusSpan.textContent = spinner[i % spinner.length];
+      await sleep(100);
+    }
+  }
+
+  // Always show OK (no actual validation)
+  statusSpan.textContent = ' OK ';
+  statusSpan.className = 'status-ok';
+  detailText.textContent = '';
+  return { success: true };
+}
+
+
 function createTerminalHelpLink(prefixLabel, linkLabel, url) {
   const line = document.createElement('div');
   line.className = 'terminal-line';
@@ -124,6 +188,107 @@ function createTerminalHelpLink(prefixLabel, linkLabel, url) {
   line.appendChild(anchor);
   terminalContent.appendChild(line);
   terminalScreen.scrollTop = terminalScreen.scrollHeight;
+}
+
+async function playBootlineMusic(label) {
+  const line = document.createElement('div');
+  line.className = 'terminal-line';
+  const openBracket = document.createElement('span'); openBracket.textContent = '[';
+  const statusSpan = document.createElement('span'); statusSpan.textContent = ' \\ ';
+  const closeBracket = document.createElement('span'); closeBracket.textContent = ']';
+  const labelText = document.createElement('span'); labelText.textContent = ` ${label}`;
+  const detailText = document.createElement('span'); detailText.className = 'boot-loading-detail'; detailText.textContent = ' loading...';
+
+  line.appendChild(openBracket);
+  line.appendChild(statusSpan);
+  line.appendChild(closeBracket);
+  line.appendChild(labelText);
+  line.appendChild(detailText);
+  terminalContent.appendChild(line);
+  terminalScreen.scrollTop = terminalScreen.scrollHeight;
+
+  const spinner = [' \\ ', ' / '];
+  const spinnerInterval = setInterval(() => {
+    statusSpan.textContent = spinner[Math.floor(Date.now() / 100) % spinner.length];
+  }, 100);
+
+  try {
+    const audio = new Audio('assets/musik.mp3');
+    audio.preload = 'auto';
+    console.log('[Audio] Loading assets/musik.mp3...');
+
+    // 1) Try unmuted play first
+    try {
+      console.log('[Audio] Attempting unmuted play...');
+      await audio.play();
+      console.log('[Audio] Unmuted play succeeded!');
+      clearInterval(spinnerInterval);
+      statusSpan.textContent = ' OK ';
+      statusSpan.className = 'status-ok';
+      detailText.textContent = '';
+      state.backgroundAudio = audio;
+      terminalScreen.scrollTop = terminalScreen.scrollHeight;
+      return;
+    } catch (err) {
+      console.warn('[Audio] Unmuted play failed:', err);
+      // fallback to muted autoplay
+    }
+
+    try {
+      console.log('[Audio] Attempting muted autoplay...');
+      audio.muted = true;
+      await audio.play();
+      console.log('[Audio] Muted autoplay succeeded, attempting to unmute...');
+      // attempt to unmute programmatically a few times
+      let unmuted = false;
+      for (let i = 0; i < 5; i++) {
+        await new Promise(r => setTimeout(r, 300));
+        try {
+          audio.muted = false;
+          await audio.play();
+          unmuted = true;
+          break;
+        } catch (e) {
+          audio.muted = true; // revert to keep playing muted
+        }
+      }
+
+      clearInterval(spinnerInterval);
+      if (unmuted) {
+        console.log('[Audio] Successfully unmuted!');
+        statusSpan.textContent = ' OK ';
+        statusSpan.className = 'status-ok';
+        detailText.textContent = '';
+        state.backgroundAudio = audio;
+      } else {
+        console.warn('[Audio] Could not unmute after 5 attempts');
+        statusSpan.textContent = ' ERROR ';
+        statusSpan.className = 'status-error';
+        detailText.textContent = '';
+        addLine('  • Autoplay blocked — cannot unmute without user interaction');
+      }
+      terminalScreen.scrollTop = terminalScreen.scrollHeight;
+      return;
+    } catch (e) {
+      console.error('[Audio] Muted autoplay failed:', e);
+      clearInterval(spinnerInterval);
+      statusSpan.textContent = ' ERROR ';
+      statusSpan.className = 'status-error';
+      detailText.textContent = '';
+      terminalScreen.scrollTop = terminalScreen.scrollHeight;
+      addLine('  • Failed to load musik.mp3');
+      return;
+    }
+  } catch (e) {
+    console.error('[Audio] Initialization error:', e);
+    clearInterval(spinnerInterval);
+    statusSpan.textContent = ' ERROR ';
+    statusSpan.className = 'status-error';
+    detailText.textContent = '';
+    terminalScreen.scrollTop = terminalScreen.scrollHeight;
+    addLine('  • Failed to initialize audio');
+    return;
+  }
 }
 
 async function runAuthCheck(item) {
@@ -199,6 +364,7 @@ export async function runBootSequence() {
   let bootHalted = false;
 
   for (const item of bootLines) {
+    console.log('[Boot] Processing item:', item.type, item.label);
     if (item.type === 'text') {
       let lineText = item.text || '';
       if (lineText.includes('${guestName}')) {
@@ -206,9 +372,24 @@ export async function runBootSequence() {
       }
       if (lineText === '') {
         addLine('');
+      } else if (lineText.toLowerCase().includes('musik')) {
+        await playBootlineMusic(lineText);
       } else {
         await typeLine(lineText, 28);
       }
+      await sleep(120);
+      continue;
+    }
+
+    if (item.type === 'text_fake') {
+      renderTextFake(item);
+      await sleep(120);
+      continue;
+    }
+
+    if (item.type === 'check_fake') {
+      await runCheckFake(item);
+      terminalScreen.scrollTop = terminalScreen.scrollHeight;
       await sleep(120);
       continue;
     }

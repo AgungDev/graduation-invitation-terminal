@@ -24,5 +24,17 @@ export async function init() {
   updateInvitationDetails();
   renderCommandPanel();
   bindTerminalInput();
+  
+  // Wait for user interaction to enable browser autoplay policy
+  await new Promise(resolve => {
+    const startBoot = () => {
+      document.removeEventListener('click', startBoot);
+      document.removeEventListener('keydown', startBoot);
+      resolve();
+    };
+    document.addEventListener('click', startBoot, { once: true });
+    document.addEventListener('keydown', startBoot, { once: true });
+  });
+  
   runBootSequence();
 }
