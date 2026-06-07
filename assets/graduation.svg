@@ -1,0 +1,22 @@
+<svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#D4B36A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+        <!-- Graduation Cap -->
+        <path d="M40 40L110 15L180 40L110 65L40 40Z"></path>
+
+        <path d="M60 50V72C60 82 83 90 110 90C137 90 160 82 160 72V50"></path>
+
+        <!-- Tassel -->
+        <path d="M180 40V75"></path>
+        <circle cx="180" cy="80" r="3"></circle>
+        <path d="M180 83L186 95"></path>
+        <path d="M180 83L174 95"></path>
+
+        <!-- Terminal Prompt -->
+        <path d="M15 100L28 112L15 124"></path>
+        <line x1="35" y1="112" x2="70" y2="112"></line>
+
+        <!-- Decorative Line -->
+        <line x1="90" y1="112" x2="205" y2="112"></line>
+    </g>
+</svg>

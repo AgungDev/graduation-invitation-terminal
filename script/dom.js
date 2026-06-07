@@ -1,0 +1,16 @@
+export const terminalContent = document.getElementById('terminalContent');
+export const commandPanel = document.getElementById('commandPanel');
+export const commandOutput = document.getElementById('commandOutput');
+export const invitationCard = document.getElementById('invitationCard');
+export const guestNameElement = document.getElementById('guestName');
+export const guestRoleElement = document.getElementById('guestRole');
+export const graduateNameElement = document.getElementById('graduateName');
+export const degreeValue = document.getElementById('degreeValue');
+export const universityValue = document.getElementById('universityValue');
+export const dateValue = document.getElementById('dateValue');
+export const timeValue = document.getElementById('timeValue');
+export const venueValue = document.getElementById('venueValue');
+export const footerAddress = document.getElementById('footerAddress');
+export const terminalScreen = document.getElementById('terminalScreen');
+export const terminalFrame = document.querySelector('.terminal-frame');
+export const terminalInput = document.getElementById('terminalInput');

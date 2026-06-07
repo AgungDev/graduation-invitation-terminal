@@ -1,0 +1,129 @@
+[
+
+  {
+    "slug": "zit",
+    "position": "Zona IT Ternate",
+    "category": "Family"
+  },
+
+    {
+    "slug": "ama",
+    "position": "Salma Nur Indriati Rahmadhani",
+    "category": "Friend"
+  },
+  {
+    "slug": "bun",
+    "position": "Rafli Junaidi Kasim",
+    "category": "Friend"
+  },
+  {
+    "slug": "bifi",
+    "position": "Faizal Muhammad",
+    "category": "Friend"
+  },
+  {
+    "slug": "ciao",
+    "position": "Nanda Maratus Shaimah",
+    "category": "Friend"
+  },
+  {
+    "slug": "pnm",
+    "position": "Putri Nadia Maulani",
+    "category": "Friend"
+  },
+  {
+    "slug": "nana",
+    "position": "Dina Arianti Mauliza",
+    "category": "Friend"
+  },
+  {
+    "slug": "rap",
+    "position": "Dwi Angga Ramdani",
+    "category": "Friend"
+  },
+  {
+    "slug": "kepsek-sdn5",
+    "position": "Kepala Sekolah SD Negeri 5",
+    "category": "Pendidikan"
+  },
+  {
+    "slug": "guru-sdn5",
+    "position": "Staf dan Guru SD Negeri 5",
+    "category": "Pendidikan"
+  },
+  {
+    "slug": "paud13",
+    "position": "PAUD Pembina 13",
+    "category": "PAUD"
+  },
+  {
+    "slug": "paud14",
+    "position": "PAUD Pembina 14",
+    "category": "PAUD"
+  },
+  {
+    "slug": "paud187",
+    "position": "Kepala Sekolah dan Guru PAUD Pembina 1.8.7",
+    "category": "PAUD"
+  },
+  {
+    "slug": "uptd-tt",
+    "position": "Kepala UPTD Ternate Tengah dan Staf",
+    "category": "UPTD"
+  },
+  {
+    "slug": "awas-tt",
+    "position": "Pengawas UPTD Ternate Tengah",
+    "category": "Pengawas"
+  },
+  {
+    "slug": "awas-ts",
+    "position": "Pengawas UPTD Ternate Selatan",
+    "category": "Pengawas"
+  },
+  {
+    "slug": "awas-disdik",
+    "position": "Pengawas Dinas Pendidikan Kota Ternate",
+    "category": "Pengawas"
+  },
+  {
+    "slug": "kepsek-alkhairat",
+    "position": "Kepala Sekolah Alkhairat",
+    "category": "Pendidikan"
+  },
+  {
+    "slug": "guru-alkhairat",
+    "position": "Guru Alkhairat",
+    "category": "Pendidikan"
+  },
+  {
+    "slug": "kepsek-bhayangkari",
+    "position": "Kepala Sekolah TK Bhayangkari",
+    "category": "TK"
+  },
+  {
+    "slug": "kepsek-adyaksa",
+    "position": "Kepala Sekolah PAUD Adyaksa",
+    "category": "PAUD"
+  },
+  {
+    "slug": "guru-adyaksa",
+    "position": "Guru PAUD Adyaksa",
+    "category": "PAUD"
+  },
+  {
+    "slug": "kepsek-aisyiyah1",
+    "position": "Kepala Sekolah PAUD Aisyiyah 1",
+    "category": "PAUD"
+  },
+  {
+    "slug": "guru-aisyiyah1",
+    "position": "Guru PAUD Aisyiyah 1",
+    "category": "PAUD"
+  },
+  {
+    "slug": "kepsek-barunawati",
+    "position": "Kepala Sekolah Barunawati",
+    "category": "Pendidikan"
+  }
+]

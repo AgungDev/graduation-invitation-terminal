@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graduation Invitation</title>
+    <!-- Using local fonts for offline usage.
+      Download the required WOFF2 files and place them in assets/fonts/.
+      See style.css @font-face declarations for expected filenames. -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="background-photo"></div>
+    <div class="scene">
+      <div class="terminal-frame">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-title">graduation-server</div>
+        </div>
+        <div class="terminal-screen" id="terminalScreen">
+          <div class="terminal-content" id="terminalContent"></div>
+          <div class="terminal-cursor" id="terminalCursor">_</div>
+        </div>
+      </div>
+      <div class="invitation-card" id="invitationCard">
+        <div class="card-header" id="graduationTitle">Graduation Ceremony</div>
+        <div class="guest-greeting" id="guestName">Welcome, Bapak Ahmad</div>
+        <div class="guest-role" id="guestRole">Friend</div>
+        <div class="card-title" id="graduateName">Arjun Nurdin</div>
+        <div class="card-subtitle" id="degreeValue">Bachelor of Computer Science</div>
+        <div class="info-block">
+          <div class="info-label">University</div>
+          <div class="info-value" id="universityValue">Universitas Lambung Mangkurat</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Date</div>
+          <div class="info-value" id="dateValue">Saturday, June 20th 2026</div>
+        </div>
+        <div class="info-block two-column">
+          <div>
+            <div class="info-label">Time</div>
+            <div class="info-value" id="timeValue">09:00 WIB</div>
+          </div>
+          <div>
+            <div class="info-label">Venue</div>
+            <div class="info-value" id="venueValue">University Auditorium</div>
+          </div>
+        </div>
+        <div class="card-footer" id="footerAddress">Present yourself in black tie or formal attire.</div>
+        <div class="command-panel" id="commandPanel" aria-label="Available commands"></div>
+        <div class="command-output" id="commandOutput" aria-live="polite"></div>
+          </div>
+    </div>
+    <div class="noise"></div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

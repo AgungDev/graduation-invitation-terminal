@@ -1,0 +1,19 @@
+{
+  "help": [
+    "Available commands: help, location",
+    "Tap one of the command buttons below to run it."
+  ],
+  "location": [
+    "BTN Simpang Lima",
+    "https://maps.app.goo.gl/kUeQhKduLk8eKrzaA"
+  ],
+  "about": [
+    "A luxury graduation invitation experience",
+    "Created as a terminal style interactive invitation."
+  ],
+  "uptime": [
+    "4 years",
+    "countless assignments",
+    "zero sleep"
+  ]
+}

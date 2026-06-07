@@ -1,0 +1,547 @@
+:root {
+  color-scheme: dark;
+  --bg: #1c1b26;
+  --panel: rgba(19, 18, 27, 0.85);
+  --panel-strong: rgba(29, 27, 39, 0.95);
+  --border: rgba(212, 179, 106, 0.35);
+  --gold: #d4b36a;
+  --gold-soft: #f4e6b0;
+  --text: #ffffff;
+  --muted: #8a8a9e;
+  --shadow: 0 32px 100px rgba(0, 0, 0, 0.4);
+}
+
+/* Local font declarations - place WOFF2 files in assets/fonts/ with these names:
+   - PlayfairDisplay-600.woff2, PlayfairDisplay-700.woff2, PlayfairDisplay-800.woff2
+   - CormorantGaramond-400.woff2, CormorantGaramond-500.woff2, CormorantGaramond-600.woff2, CormorantGaramond-700.woff2
+   - FiraCode-400.woff2, FiraCode-500.woff2, FiraCode-700.woff2
+   - GreatVibes-400.woff2
+   - Inter-400.woff2, Inter-500.woff2, Inter-600.woff2
+   - JetBrainsMono-400.woff2, JetBrainsMono-500.woff2, JetBrainsMono-700.woff2
+
+   Use a tool such as Google Webfonts Helper (https://google-webfonts-helper.herokuapp.com/) to download WOFF2 files.
+*/
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-800.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('./assets/fonts/CormorantGaramond-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/fonts/FiraCode-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/fonts/FiraCode-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./assets/fonts/FiraCode-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Great Vibes';
+  src: url('./assets/fonts/GreatVibes-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/JetBrainsMono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/JetBrainsMono-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/fonts/JetBrainsMono-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  background: radial-gradient(circle at top, rgba(212, 179, 106, 0.06), transparent 32%),
+    radial-gradient(circle at 20% 14%, rgba(255, 255, 255, 0.04), transparent 24%),
+    linear-gradient(180deg, #14131d 0%, #1c1b26 100%);
+  color: var(--text);
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03), transparent 35%);
+  pointer-events: none;
+}
+
+.page-shell {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.background-photo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(15,13,22,.92), rgba(15,13,22,.95)),
+    url("./assets/graduation.svg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.scene {
+  position: relative;
+  width: min(100%, 500px);
+  height: min(100dvh, 900px);
+  max-height: 100dvh;
+  margin: auto;
+}
+
+.terminal-frame,
+.invitation-card {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border-radius: 28px;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow);
+}
+
+.terminal-frame {
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 22%),
+    linear-gradient(180deg, rgba(31, 29, 42, 0.98), rgba(22, 20, 30, 0.96));
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  transition: all 1.5s ease;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.red { background: #f6685e; }
+.dot.yellow { background: #f3c74b; }
+.dot.green { background: #67d97a; }
+
+.terminal-title {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.terminal-screen {
+  position: relative;
+  flex: 1;
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(14, 12, 20, 0.94);
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 420px;
+}
+
+.terminal-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.03) 3px
+  );
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.terminal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #dfdfe5;
+  white-space: pre-wrap;
+}
+
+.terminal-line {
+  display: block;
+}
+
+.terminal-cursor {
+  position: absolute;
+  bottom: 24px;
+  left: 26px;
+  width: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  animation: blink 1s step-end infinite;
+}
+
+.status-ok {
+  color: #67d97a;
+}
+
+.status-error {
+  color: #f6685e;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+.invitation-card {
+  padding: 28px;
+  background: rgba(18, 17, 28, 0.96);
+  border: 1px solid rgba(212, 179, 106, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  border-radius: 28px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  transition: opacity 1s ease, transform 1s ease, backdrop-filter 1s ease;
+  backdrop-filter: blur(18px);
+  z-index: 2;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+.invitation-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.terminal-frame.dimmed {
+  opacity: 0;
+  transform: scale(0.96);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.card-header {
+  font-family: 'Playfair Display', serif;
+  color: var(--gold-soft);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.guest-greeting {
+  white-space: pre-line;
+}
+
+.terminal-link,
+.terminal-line a {
+  color: #6cb6ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.terminal-link:hover,
+.terminal-line a:hover {
+  color: #9cd7ff;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.guest-role {
+  font-size: 0.95rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.card-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.12rem;
+  color: var(--gold);
+  margin-bottom: 30px;
+}
+
+.info-block {
+  margin-bottom: 22px;
+}
+
+.info-block.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.info-label {
+  font-size: 0.84rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #f5f3e7;
+  line-height: 1.7;
+}
+
+.card-footer {
+  margin-top: 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.command-panel {
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.command-output {
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 179, 106, 0.18);
+  color: #f3f0e8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  min-height: 110px;
+}
+
+.command-output div {
+  margin-bottom: 10px;
+}
+
+.command-output div:last-child {
+  margin-bottom: 0;
+}
+
+.command-panel.visible {
+  display: grid;
+}
+
+.command-button {
+  min-height: 46px;
+  border: 1px solid rgba(212, 179, 106, 0.22);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.command-button:hover {
+  transform: translateY(-1px);
+  background: rgba(212, 179, 106, 0.12);
+}
+
+.command-button:active {
+  transform: translateY(0);
+}
+
+.terminal-input-wrapper {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  z-index: 10;
+}
+
+.terminal-prompt {
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+}
+
+.terminal-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #f3f0e8;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.terminal-input::placeholder {
+  color: rgba(243, 240, 232, 0.45);
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 900px) {
+  .page-shell { padding: 16px; }
+  .scene { max-width: 100%; height: 100%; }
+  .terminal-frame,
+  .invitation-card { height: 100%; }
+  .terminal-screen { min-height: 360px; padding: 20px; }
+  .command-panel { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .page-shell { padding: 12px; }
+  .terminal-screen { min-height: 320px; padding: 18px; }
+  .card-title { font-size: 2.6rem; }
+  .card-subtitle { font-size: 1rem; }
+  .info-value { font-size: 0.95rem; }
+  .command-button { min-height: 44px; font-size: 0.92rem; }
+}
+

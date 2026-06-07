@@ -1,0 +1,54 @@
+[
+  { "type": "text", "text": "systemctl start graduation.service" },
+  { "type": "text", "text": "" },
+  {
+    "type": "check",
+    "label": "Get Configure",
+    "check": "config",
+    "keys": [
+      "NAME",
+      "DEGREE",
+      "UNIVERSITY",
+      "DATE",
+      "TIME",
+      "ADDRESS",
+      "ADDRESS_MAPS",
+      "PHONE",
+      "HELP_PHONE",
+      "GRADUATION_TITLE"
+    ]
+  },
+  {
+    "type": "check",
+    "label": "Time",
+    "check": "config",
+    "keys": ["TIME"]
+  },
+  {
+    "type": "check",
+    "label": "Guest List",
+    "check": "guests"
+  },
+  {
+    "type": "check",
+    "label": "Command Responses",
+    "check": "commandResponses"
+  },
+  { "type": "text", "text": "" },
+  { "type": "text", "text": "Guest detected:" },
+  { "type": "text", "text": "${guestName}" },
+  { "type": "text", "text": "" },
+  { "type": "text", "text": "Authenticating invitation..." },
+  { "type": "text", "text": "" },
+  {
+    "type": "check",
+    "label": "Authentication Guest",
+    "check": "authenticationGuest"
+  },
+  {
+    "type": "check",
+    "label": "Authorization Guest",
+    "check": "authorizationGuest"
+  },
+  { "type": "text", "text": "" }
+]
