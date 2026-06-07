@@ -1,41 +1,51 @@
 [
   { "type": "text", "text": "systemctl start graduation.service" },
-  { "type": "text", "text": "" },
+  { "type": "text", "text": "MusikkkkkKKK .." },
   {
-    "type": "check",
-    "label": "Get Configure",
-    "check": "config",
+    "type": "check_fake",
+    "label": "Progres Kuliah",
     "keys": [
-      "NAME",
-      "DEGREE",
-      "UNIVERSITY",
-      "DATE",
-      "TIME",
-      "ADDRESS",
-      "ADDRESS_MAPS",
-      "PHONE",
-      "GRADUATION_TITLE"
+      "Fisika Teknik",
+      "Algoritma dan Pemrograman",
+      "Struktur Data",
+      "Basis Data",
+      "Sistem Operasi",
+      "Jaringan Komputer",
+      "Rekayasa Perangkat Lunak",
+      "Kecerdasan Buatan",
+      "Pembelajaran Mesin",
+      "Pengolahan Citra",
+      "Keamanan Siber",
+      "Interaksi Manusia dan Komputer",
+      "Pemrograman Web",
+      "Pemrograman Mobile"
     ]
   },
   {
-    "type": "check",
-    "label": "Time",
-    "check": "config",
-    "keys": ["TIME"]
+    "type": "text_fake",
+    "text": "Kerja Praktek (KP)",
+    "success": true
   },
   {
-    "type": "check",
-    "label": "Guest List",
-    "check": "guests"
+    "type": "text_fake",
+    "text": "Kuliah Kerja Sosial (KKS)",
+    "success": true
   },
   {
-    "type": "check",
-    "label": "Command Responses",
-    "check": "commandResponses"
+    "type": "text_fake",
+    "text": "PROPOSAL",
+    "success": true
   },
-  { "type": "text", "text": "" },
-  { "type": "text", "text": "Guest detected:" },
-  { "type": "text", "text": "${guestName}" },
+  {
+    "type": "text_fake",
+    "text": "Cumlaude",
+    "success": false
+  },
+  {
+    "type": "text_fake",
+    "text": "Skripsi",
+    "success": true
+  },
   { "type": "text", "text": "" },
   { "type": "text", "text": "Authenticating invitation..." },
   { "type": "text", "text": "" },
