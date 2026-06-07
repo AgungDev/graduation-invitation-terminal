@@ -5,8 +5,17 @@
     "position": "Zona IT Ternate",
     "category": "Family"
   },
-
-    {
+  {
+    "slug": "wa",
+    "position": "Penonton Story WhatsApp",
+    "category": "Friend"
+  },
+  {
+    "slug": "ig",
+    "position": "Penonton Story Instagram",
+    "category": "Friend"
+  },
+  {
     "slug": "ama",
     "position": "Salma Nur Indriati Rahmadhani",
     "category": "Friend"
