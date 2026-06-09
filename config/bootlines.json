@@ -22,14 +22,26 @@
     ]
   },
   {
-    "type": "text_fake",
-    "text": "Kerja Praktek (KP)",
-    "success": true
+    "type": "check_fake",
+    "label": "Kerja Praktek (KP)",
+    "keys": [
+      "Daftar KP",
+      "SMA Negeri 5 TIKEP",
+      "Buat WEB SI SMA N. 5 TIKEP",
+      "Buat Laporan KP di SMA N. 5 TIKEP"
+    ]
   },
   {
-    "type": "text_fake",
-    "text": "Kuliah Kerja Sosial (KKS)",
-    "success": true
+    "type": "check_fake",
+    "label": "Kuliah Kerja Sosial (KKS)",
+    "keys": [
+      "Daftar KKS",
+      "Pelaksanaan KKS",
+      "Kelurahan OME Tidore",
+      "Ngumpulin Data",
+      "Satu bulan lamanya",
+      "Laporan KKS"
+    ]
   },
   {
     "type": "text_fake",
@@ -38,13 +50,40 @@
   },
   {
     "type": "text_fake",
-    "text": "Cumlaude",
+    "text": "Skripsi",
+    "success": true
+  },
+  {
+    "type": "text_fake",
+    "text": "5 Tahun",
     "success": false
   },
   {
     "type": "text_fake",
-    "text": "Skripsi",
+    "text": "6 Tahun",
+    "success": false
+  },
+  {
+    "type": "text_fake",
+    "text": "7 Tahun",
     "success": true
+  },
+  {
+    "type": "check_fake",
+    "label": "Wisuda ✎🎓ᝰ",
+    "keys": [
+      "Surat keterangan bebas akademik",
+      "Transkrip nilai sementara",
+      "Fotocopy KHS, & KRS",
+      "Fotocopy slip pembayaran SPP semester 1-14",
+      "Surat keterangan bebas LAB",
+      "Fotocopy slip pembayaran ujian skripsi",
+      "Daftar Skripsi",
+      "Daftar YUdisium",
+      "Mengikuti Yudisium",
+      "Daftar Wisuda",
+      "Mengikuti Wisuda"
+    ]
   },
   { "type": "text", "text": "" },
   { "type": "text", "text": "Authenticating invitation..." },
