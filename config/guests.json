@@ -1,6 +1,16 @@
 [
 
   {
+    "slug": "trump",
+    "position": "Donal Trump",
+    "category": "Presiden US"
+  },
+  {
+    "slug": "mike",
+    "position": "Mike Tyson",
+    "category": "Petinju"
+  },
+  {
     "slug": "zit",
     "position": "Zona IT Ternate",
     "category": "Family"
