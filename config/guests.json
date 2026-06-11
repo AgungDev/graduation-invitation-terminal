@@ -1,5 +1,64 @@
 [
-
+  {
+    "slug": "ia_cw",
+    "position": "Faradila junita kanja",
+    "category": "Family"
+  },
+  {
+    "slug": "ka_uban",
+    "position": "Kak Uban",
+    "category": "CIO Tambang"
+  },
+  {
+    "slug": "dio",
+    "position": "Dioawfwan",
+    "category": "Kicaw Kicaw Mania"
+  },
+  {
+    "slug": "garis",
+    "position": "Ibu Ga, & Pak Haris",
+    "category": "Dosen"
+  },
+  {
+    "slug": "noho",
+    "position": "Abdul Noho Ganteng",
+    "category": "Tokoh Masyarakat"
+  },
+  {
+    "slug": "staff_ict_ummu",
+    "position": "Staff ICT UMMU",
+    "category": "Friend"
+  },
+  {
+    "slug": "2014_unkhair",
+    "position": "Angkatan 2014 Unkhair",
+    "category": "Friend"
+  },
+  {
+    "slug": "ical",
+    "position": "Ical Ganteng",
+    "category": "Sherly Pe ana Mantu"
+  },
+  {
+    "slug": "bun_cw",
+    "position": "Fitri Ayu Idris",
+    "category": "Pasangan Bunbun"
+  },
+  {
+    "slug": "iki",
+    "position": "Rizkiyanto",
+    "category": "Laki-Laki Stoicism"
+  },
+  {
+    "slug": "Ryan",
+    "position": "Ryan",
+    "category": "Manusia Normal"
+  },
+  {
+    "slug": "ari",
+    "position": "Ari",
+    "category": "Manusia Stengah Ikan"
+  },
   {
     "slug": "trump",
     "position": "Donal Trump",
