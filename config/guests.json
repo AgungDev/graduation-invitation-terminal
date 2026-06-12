@@ -252,6 +252,31 @@
   {
     "slug": "kepsek-barunawati",
     "position": "Kepala Sekolah Barunawati",
-    "category": "Pendidikan"
+    "category": "Mahasiswa INTEG"
+  },
+  {
+    "slug": "ang2022",
+    "position": "Mahasiswa INTEG Angkatan 22",
+    "category": "Mahasiswa INTEG"
+  },
+  {
+    "slug": "ang2023",
+    "position": "Mahasiswa INTEG Angkatan 23",
+    "category": "Mahasiswa INTEG"
+  },
+  {
+    "slug": "ang2024",
+    "position": "Mahasiswa INTEG Angkatan 24",
+    "category": "Mahasiswa INTEG"
+  },
+  {
+    "slug": "ang2025",
+    "position": "Mahasiswa INTEG Angkatan 25",
+    "category": "Mahasiswa INTEG"
+  },
+  {
+    "slug": "dosen",
+    "position": "Dosen & Staf INTEG",
+    "category": "INTEG"
   }
 ]
