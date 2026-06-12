@@ -1,5 +1,10 @@
 [
   {
+    "slug": "nakama",
+    "position": "Nakama",
+    "category": "Keluarga Besar"
+  },
+  {
     "slug": "samsul",
     "position": "Kompol Samsul Bahri Handji, S.E., M.Si.",
     "category": "Keluarga Besar"
@@ -132,7 +137,7 @@
   {
     "slug": "ama",
     "position": "Salma Nur Indriati Rahmadhani",
-    "category": "Friend"
+    "category": "Family"
   },
   {
     "slug": "bun",
