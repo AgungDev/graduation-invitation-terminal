@@ -1,5 +1,20 @@
 [
   {
+    "slug": "ker",
+    "position": "KER448AT MALUT",
+    "category": "Keluarga Besar"
+  },
+  {
+    "slug": "agenda",
+    "position": "AGENDA",
+    "category": "Keluarga Besar"
+  },
+  {
+    "slug": "narkoba",
+    "position": "Satuan Resnarkoba",
+    "category": "Keluarga Besar"
+  },
+  {
     "slug": "nizam",
     "position": "Nidzam Ganteng",
     "category": "Calon Koruptor"
